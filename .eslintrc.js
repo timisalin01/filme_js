@@ -19,7 +19,6 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-
   rules: {
     "react/react-in-jsx-scope": 0,
     "import/extensions": 0,
@@ -64,5 +63,10 @@ module.exports = {
         aspects: ["noHref", "invalidHref", "preferButton"],
       },
     ],
+    quotes: [
+      "error",
+      "single",
+      { allowTemplateLiterals: true, avoidEscape: true },
+    ], // Adaugă această regulă
   },
 };
