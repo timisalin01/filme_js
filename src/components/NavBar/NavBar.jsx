@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AppBar,
   IconButton,
@@ -16,17 +16,70 @@ import {
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Sidebar, Search } from '..';
-import { fetchToken } from '../../utils';
-import useStyles from './styles';
+import { setUser, userSelector } from '../../features/auth'; // Import Redux actions and selectors
+import { Sidebar, Search } from '..'; // Additional components
+import { fetchToken, createSessionId, moviesApi } from '../../utils'; // Utility functions and API calls
+import useStyles from './styles'; // Custom styles for the component
 
 const NavBar = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const classes = useStyles();
-  const isMobile = useMediaQuery('(max-width:600px)');
-  const theme = useTheme();
-  const isAuthenticated = false;
+  const { isAuthenticated, user } = useSelector(userSelector); // Fetch user state from Redux
+  const [mobileOpen, setMobileOpen] = useState(false); // State for mobile navigation
+  const classes = useStyles(); // Custom styles
+  const isMobile = useMediaQuery('(max-width:600px)'); // Media query to check screen size
+  const theme = useTheme(); // Get the current theme (light/dark mode)
+  const dispatch = useDispatch(); // Redux dispatch function
+
+  console.log(user);
+
+  // Get the token and sessionId from localStorage
+  const token = localStorage.getItem('request_token');
+  const sessionIdFromLocalStorage = localStorage.getItem('session_id');
+
+  // Effect to log in the user when the token is available
+  useEffect(() => {
+    const logInUser = async () => {
+      if (token) {
+        try {
+          if (sessionIdFromLocalStorage) {
+            // Fetch user data if sessionId is available
+            const { data: userData } = await moviesApi.get(
+              `/account?session_id=${sessionIdFromLocalStorage}`
+            );
+            if (userData && userData.id) {
+              // Verifică dacă userData conține datele necesare
+              dispatch(setUser(userData)); // Dispatch action to set the user in Redux
+            } else {
+              console.error('Invalid user data:', userData);
+            }
+          } else {
+            // Create new sessionId if not available
+            const sessionId = await createSessionId();
+
+            const { data: userData } = await moviesApi.get(
+              `/account?session_id=${sessionId}`
+            );
+
+            if (userData && userData.id) {
+              // Verifică dacă userData conține datele necesare
+              dispatch(setUser(userData)); // Dispatch action to set the user in Redux
+            } else {
+              console.error('Invalid user data:', userData);
+            }
+          }
+        } catch (error) {
+          console.error('Error during login:', error);
+          if (error.response && error.response.status === 401) {
+            // Token might be expired or invalid, regenerate token
+            await fetchToken();
+          }
+        }
+      }
+    };
+
+    logInUser();
+  }, [token, dispatch, sessionIdFromLocalStorage]);
 
   return (
     <>

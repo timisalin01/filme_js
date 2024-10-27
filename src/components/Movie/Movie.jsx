@@ -26,7 +26,10 @@ const Movie = ({ movie, i }) => {
       <Typography className={classes.title} variant="h5">
         {movie.title}
       </Typography>
-      <Tooltip disableTouchListener title={`${movie.vote_average} / 10`}>
+      <Tooltip
+        disableTouchListener
+        title={`${movie.vote_average.toFixed(1)} / 10`}
+      >
         <div className={classes.rating}>
           <Rating readOnly value={movie.vote_average / 2} precision={0.1} />
         </div>
