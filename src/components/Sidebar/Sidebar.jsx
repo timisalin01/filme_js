@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Label } from '@mui/icons-material';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useGetGenresQuery } from '../../services/TMDB';
 import useStyles from './styles';
@@ -25,10 +24,10 @@ const categories = [
   { label: 'Upcoming', value: 'upcoming' },
 ];
 
+const redLogo =
+  'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
 const blueLogo =
-  'https://fontmeme.com/permalink/241009/f75e9ab26b8e352f79ec5afa99a3ddb6.png';
-const redlogo =
-  'https://fontmeme.com/permalink/241009/a637046cb7fff925a368871bff24d3c1.png';
+  'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
 
 const Sidebar = ({ setMobileOpen }) => {
   const { genreIdOrCategoryName } = useSelector(
@@ -39,15 +38,17 @@ const Sidebar = ({ setMobileOpen }) => {
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
 
-  console.log(data);
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [genreIdOrCategoryName]);
 
   return (
     <>
       <Link to="/" className={classes.imageLink}>
         <img
           className={classes.image}
-          src={theme.palette.mode === 'light' ? blueLogo : redlogo}
-          alt="MovieVerse"
+          src={theme.palette.mode === 'light' ? redLogo : blueLogo}
+          alt="Filmpire logo"
         />
       </Link>
       <Divider />
@@ -62,7 +63,7 @@ const Sidebar = ({ setMobileOpen }) => {
               <ListItemIcon>
                 <img
                   src={genreIcons[label.toLowerCase()]}
-                  className={classes.genreImages}
+                  className={classes.genreImage}
                   height={30}
                 />
               </ListItemIcon>
@@ -74,7 +75,6 @@ const Sidebar = ({ setMobileOpen }) => {
       <Divider />
       <List>
         <ListSubheader>Genres</ListSubheader>
-
         {isFetching ? (
           <Box display="flex" justifyContent="center">
             <CircularProgress />
@@ -89,7 +89,7 @@ const Sidebar = ({ setMobileOpen }) => {
                 <ListItemIcon>
                   <img
                     src={genreIcons[name.toLowerCase()]}
-                    className={classes.genreImages}
+                    className={classes.genreImage}
                     height={30}
                   />
                 </ListItemIcon>

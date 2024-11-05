@@ -1,10 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-//* import { buildQueries } from '@testing-library/react';
 
 const tmdbApiKey = process.env.REACT_APP_TMDB_KEY;
 
 export const tmdbApi = createApi({
-  reducePath: 'tmdbApi',
+  reducerPath: 'tmdbApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.themoviedb.org/3' }),
   endpoints: (builder) => ({
     //* Get Genres
@@ -12,15 +11,15 @@ export const tmdbApi = createApi({
       query: () => `genre/movie/list?api_key=${tmdbApiKey}`,
     }),
 
-    //* Get Movie by[type]
+    //* Get Movies by [Type]
     getMovies: builder.query({
       query: ({ genreIdOrCategoryName, page, searchQuery }) => {
-        // get movie by search
+        //* Get Movies by Search
         if (searchQuery) {
-          return `/search/movie?query=${searchQuery}&page${page}&api_key=${tmdbApiKey}`;
+          return `/search/movie?query=${searchQuery}&page=${page}&api_key=${tmdbApiKey}`;
         }
 
-        // Get movie  by category
+        //* Get Movies by Category
         if (
           genreIdOrCategoryName &&
           typeof genreIdOrCategoryName === 'string'
@@ -28,31 +27,42 @@ export const tmdbApi = createApi({
           return `movie/${genreIdOrCategoryName}?page=${page}&api_key=${tmdbApiKey}`;
         }
 
-        // get movie by geners
+        //* Get Movies by Genre
         if (
           genreIdOrCategoryName &&
           typeof genreIdOrCategoryName === 'number'
         ) {
           return `discover/movie?with_genres=${genreIdOrCategoryName}&page=${page}&api_key=${tmdbApiKey}`;
         }
-        // get popular movies
+
+        //* Get Popular Movies
         return `movie/popular?page=${page}&api_key=${tmdbApiKey}`;
       },
     }),
-    //*  get movie
+
+    //* Get Movie
     getMovie: builder.query({
       query: (id) =>
         `/movie/${id}?append_to_response=videos,credits&api_key=${tmdbApiKey}`,
     }),
-    //* get user specific list
+
+    //* Get User Specific Lists
+    getList: builder.query({
+      query: ({ listName, accountId, sessionId, page }) =>
+        `/account/${accountId}/${listName}?api_key=${tmdbApiKey}&session_id=${sessionId}&page=${page}`,
+    }),
+
     getRecommendations: builder.query({
-      query: (movie_id) =>
-        `/movie/${movie_id}/recommendations?api_key=${tmdbApiKey}`,
+      // eslint-disable-next-line camelcase
+      query: ({ movie_id, list }) =>
+        // eslint-disable-next-line implicit-arrow-linebreak, camelcase
+        `movie/${movie_id}/${list}?api_key=${tmdbApiKey}`,
     }),
 
     getActorsDetails: builder.query({
       query: (id) => `person/${id}?api_key=${tmdbApiKey}`,
     }),
+
     getMoviesByActorId: builder.query({
       query: ({ id, page }) =>
         `/discover/movie?with_cast=${id}&page=${page}&api_key=${tmdbApiKey}`,
@@ -61,9 +71,10 @@ export const tmdbApi = createApi({
 });
 
 export const {
-  useGetMoviesQuery,
   useGetGenresQuery,
+  useGetMoviesQuery,
   useGetMovieQuery,
+  useGetListQuery,
   useGetRecommendationsQuery,
   useGetActorsDetailsQuery,
   useGetMoviesByActorIdQuery,

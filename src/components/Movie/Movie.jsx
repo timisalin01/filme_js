@@ -6,7 +6,9 @@ import useStyles from './styles';
 
 const Movie = ({ movie, i }) => {
   const classes = useStyles();
-  console.log(movie, i);
+
+  // Obține rating-ul rotunjit la o zecimală
+  const roundedRating = (Math.round(movie.vote_average * 10) / 10).toFixed(1);
 
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} className={classes.movie}>
@@ -18,7 +20,7 @@ const Movie = ({ movie, i }) => {
             src={
               movie.poster_path
                 ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                : 'https:/www.fillmurray.com/200/300'
+                : 'https://www.fillmurray.com/200/300'
             }
           />
         </Link>
@@ -28,7 +30,7 @@ const Movie = ({ movie, i }) => {
       </Typography>
       <Tooltip
         disableTouchListener
-        title={`${movie.vote_average.toFixed(1)} / 10`}
+        title={`${roundedRating} / 10`} // Folosim rating-ul rotunjit
       >
         <div className={classes.rating}>
           <Rating readOnly value={movie.vote_average / 2} precision={0.1} />
