@@ -144,10 +144,3 @@ Get a free TMDB API Key at - https://www.themoviedb.org/.
   ```sh
 
 REACT_APP_TMDB_KEY=<put your key here>
-
-3.Start the Local Server
-  
-  ```sh
-
-    npm run
-
