@@ -134,20 +134,22 @@ In this project it was utilized: <i>**Javascript, React && Redux ToolKit, MUI, A
   
 To get started, fork the repository and then run the following commands:
 
-1. Install NPM packages
-
-   ```sh
-   npm install
-2. Configure your .ENV
-  Get a free TMDB API Key at - https://www.themoviedb.org/.
-
-  ```sh
-   REACT_APP_TMDB_KEY=<put your key here>
-
-
-3.Start the Local Server
+1.Instalează pachetele NPM
 
 sh
 
-npm run
- 
+npm install
+
+2.Configurează fișierul .ENV
+Obține o cheie API gratuită de la TMDB la - https://www.themoviedb.org/.
+
+sh
+
+REACT_APP_TMDB_KEY=<introdu cheia ta aici>
+
+3.Pornire Server Local
+
+sh
+
+    npm run
+
