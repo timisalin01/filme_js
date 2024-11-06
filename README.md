@@ -134,22 +134,79 @@ In this project it was utilized: <i>**Javascript, React && Redux ToolKit, MUI, A
   
 To get started, fork the repository and then run the following commands:
 
-1.Instalează pachetele NPM
+1. Install NPM packages
 
-sh
-
+```sh
 npm install
+```
 
-2.Configurează fișierul .ENV
-Obține o cheie API gratuită de la TMDB la - https://www.themoviedb.org/.
+2. Configure your .ENV
+   Get a free TMDB API Key at - [https://www.themoviedb.org/](https://www.themoviedb.org/).
 
-sh
+```sh
+REACT_APP_TMDB_KEY=<put your key here>
+```
 
-REACT_APP_TMDB_KEY=<introdu cheia ta aici>
+3. Start the Local Server
 
-3.Pornire Server Local
+```sh
+npm run start
+```
 
-sh
+4. If you have problems connecting with REST Calls, disable any Adblock/Ghostery or similar extensions.
 
-    npm run
+<br>
 
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+</br></br>
+✏️ To contribute, do the following:
+
+1. Fork the Project
+2. Create your Feature Branch. (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes. (`git commit -m 'Adding some AmazingFeature'`)
+4. Push to the Branch. (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<h2 id="Learned" align="center">☕ What have i learned?</h2>
+
+> With this project i was able to further advance my **Technical Skills and Knowledge** with React and Javascript in general, using **Redux Toolkit** to persist my Data and **RTK Query** to easily integrate the whole Aplication by **Dynamically Consuming APIs**<br>
+> It was also my first contact with **Material UI (MUI)** and i love how simple it is to create **Good and Responsive Styles** with its **suite of UI tools full of fully-loaded component library**. Its also easy to **Integrate your Custom Styles** with it too.<br>
+> Got to learn how to **Use and Integrate a Personal AI Assistant** on the Application, capable of **Interacting with different Options and Making Actions via English Voice Command**.<br>
+> I learned how to setup and configure **ESlint** to my needs to mantain **Clean and Formatted Structured Code**.<br>
+> Also learned the one of the best **Refactoring and Componentization Practices** on the actual Market. <br>
+> It inspired me to create my own **Custom Language Options** for the User to **Switch between 'pt-BR' and 'en-US'**.
+
+## 📝 License
+
+Distributed under the **MIT** License.
+
+## 🤝 Contributors
+
+Thanks to the following people who contributed to this project in some way:
+<br><br>
+<b>Nobody yet, see something that you want to improve on this project? Share it with me!.<b/>
+
+<!--<table>
+  <tr>
+    <td align="center">
+      <a href="">
+        <!--<img src="" alt=""/><br>
+        <sub>
+          <b></b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>-->
+
+<h2>Author</h2>
+
+Made with 💜 and dedication by me **Alin TIMIS** <br>
+
+<h2>Acknowledgments</h2>
+
+Used resources:
+
+- [The Movie DB API Documentation](https://developers.themoviedb.org/3/getting-started/introduction)
+- [MUI Library](https://mui.com/)
+- [JavaScript Mastery](https://www.jsmastery.pro/)
