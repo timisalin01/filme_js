@@ -139,8 +139,11 @@ To get started, fork the repository and then run the following commands:
    ```sh
    npm install
 2. Configure your .ENV
-Get a free TMDB API Key at - https://www.themoviedb.org/.
+  Get a free TMDB API Key at - https://www.themoviedb.org/.
 
   ```sh
+   REACT_APP_TMDB_KEY=<put your key here>
+3.Start the Local Server
 
-REACT_APP_TMDB_KEY=<put your key here>
+ ```sh
+    npm run
