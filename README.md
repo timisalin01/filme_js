@@ -143,6 +143,8 @@ To get started, fork the repository and then run the following commands:
 
   ```sh
    REACT_APP_TMDB_KEY=<put your key here>
+
+
 3.Start the Local Server
 
  ```sh
