@@ -147,5 +147,7 @@ To get started, fork the repository and then run the following commands:
 
 3.Start the Local Server
 
- ```sh
-    npm run
+sh
+
+npm run
+ 
