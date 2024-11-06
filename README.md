@@ -157,15 +157,7 @@ npm run start
 
 <br>
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-</br></br>
-✏️ To contribute, do the following:
 
-1. Fork the Project
-2. Create your Feature Branch. (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes. (`git commit -m 'Adding some AmazingFeature'`)
-4. Push to the Branch. (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <h2 id="Learned" align="center">☕ What have i learned?</h2>
 
@@ -174,7 +166,7 @@ Contributions are what make the open source community such an amazing place to l
 > Got to learn how to **Use and Integrate a Personal AI Assistant** on the Application, capable of **Interacting with different Options and Making Actions via English Voice Command**.<br>
 > I learned how to setup and configure **ESlint** to my needs to mantain **Clean and Formatted Structured Code**.<br>
 > Also learned the one of the best **Refactoring and Componentization Practices** on the actual Market. <br>
-> It inspired me to create my own **Custom Language Options** for the User to **Switch between 'pt-BR' and 'en-US'**.
+
 
 ## 📝 License
 
