@@ -2,6 +2,7 @@
   <img alt="MOVIE VERSE" title="MOVIE VERSE" src="/public/favicon.ico" width="50px" />
   MOVIE VERSE
 </h1>
+   <img alt="MOVIE VERSE" title="MOVIE VERSE" src="/public/favicon.ico" width="50px" />
 
 <p align="center">
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
