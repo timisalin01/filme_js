@@ -101,3 +101,14 @@ To get started, fork the repository and then run the following commands:
 
 ```sh
 npm install
+<h2 id="Learned" align="center">☕ What have I learned?</h2>
+
+<p>
+  With this project, I was able to further advance my <strong>Technical Skills and Knowledge</strong> with React and Javascript in general, using <strong>Redux Toolkit</strong> to persist my Data and <strong>RTK Query</strong> to easily integrate the whole Application by <strong>Dynamically Consuming APIs</strong>.<br>
+  It was also my first contact with <strong>Material UI (MUI)</strong> and I love how simple it is to create <strong>Good and Responsive Styles</strong> with its suite of UI tools full of fully-loaded component library. It's also easy to <strong>Integrate your Custom Styles</strong> with it too.<br>
+  Got to learn how to <strong>Use and Integrate a Personal AI Assistant</strong> on the Application, capable of <strong>Interacting with different Options and Making Actions via English Voice Command</strong>.<br>
+  I learned how to set up and configure <strong>ESLint</strong> to my needs to maintain <strong>Clean and Formatted Structured Code</strong>.<br>
+  Also learned one of the best <strong>Refactoring and Componentization Practices</strong> on the actual Market.<br>
+  It inspired me to create my own <strong>Custom Language Options</strong> for the User to <strong>Switch between 'pt-BR' and 'en-US'</strong>.
+</p>
+
