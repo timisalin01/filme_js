@@ -2,7 +2,7 @@
   <img alt="MOVIE VERSE" title="MOVIE VERSE" src="/public/favicon.ico" width="50px" />
   MOVIE VERSE
 </h1>
-   <img alt="MOVIE VERSE" title="MOVIE VERSE" href="https://ibb.co/3pZrPMW" width="550px" />
+   <a href="https://ibb.co/3pZrPMW"><img src="https://i.ibb.co/x1TCrfG/screencapture.png" alt="screencapture" border="0"></a>
 
 <p align="center">
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
