@@ -3,7 +3,11 @@
   MOVIE VERSE
 </h1>
 
-   <a href="https://ibb.co/3pZrPMW"><img src="https://i.ibb.co/x1TCrfG/screencapture.png" alt="screencapture" border="0" width="550px"></a>
+   <div style="text-align: center;">
+  <a href="https://ibb.co/3pZrPMW">
+    <img src="https://i.ibb.co/x1TCrfG/screencapture.png" alt="screencapture" style="width: 1012px; display: inline-block;" />
+  </a>
+</div>
 
 <p align="center">
   <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
