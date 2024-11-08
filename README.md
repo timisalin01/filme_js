@@ -19,7 +19,7 @@
 ---
 
 <p align="center">
-  <img alt="MOVIE VERSE Demo" title="MOVIE VERSE"  href="https://movieverse.creatiweb.ro/>
+  <img alt="MOVIE VERSE Demo" title="MOVIE VERSE"  href="https://movieverse.creatiweb.ro"/>
 </p>
 
 ---
